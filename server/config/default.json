@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://juliosoto:juliosoto@issuetracker-bvyai.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "jwtSecretToken"
+}
