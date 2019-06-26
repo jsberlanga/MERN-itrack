@@ -9,8 +9,15 @@ connectMongoDB();
 // Initialize Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send("<h1>MERN App</h1>");
+// Handling CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Origin", "*");
+    return res.status(200).json({});
+  }
+  next();
 });
 
 // Define Routes
